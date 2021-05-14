@@ -1,13 +1,14 @@
-from utils import console
 from services import auth_services
 from utils import console
 from utils import theme
+from utils import terminal_read
 
 
 console.headline("welcome")
 console.options()
 
-option = int(input(theme.input("Option: ")))
+
+option = terminal_read.option()
 
 if option == 1:
     auth_services.login()
