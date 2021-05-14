@@ -1,14 +1,12 @@
-import re
 from utils import console
 from services import user_services
-
+from utils import terminal_read
 def login():
     console.headline("login")
     is_user_not_logged_in = True
     while is_user_not_logged_in:
+        email = terminal_read.email()
 
-        
-        email = email()
         user = user_services.get_user_by_email(email)
         if(user == -1):
             print(f'{email} does not exists.')
@@ -32,13 +30,4 @@ def login():
 def register():
     pass
 
-def email():
-    email = ""
-    is_email_not_valid = True
-    while is_email_not_valid:
-        email = input("Please input your email: ")
-        email_regex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
-        if re.search(email_regex, email):
-            is_email_not_valid = False
-        else:
-            print(f'Format incorrect for: {email}')
+
