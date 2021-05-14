@@ -1,6 +1,7 @@
 from utils import validate
 from utils import theme
 from utils import console
+from enums.answer import Answer
 
 def option():    
     while True:
@@ -21,3 +22,14 @@ def email():
             console.warning("Incorrect email format.")
         else:
             return email
+
+def yes_no():
+    while True:
+        answer = input(theme.yellow_bold("Do you want to try again? (y/n): "))
+        if answer.lower() == "n":
+            console.statement("See you.")
+            return Answer.NO
+        elif answer.lower() == "y":
+            return Answer.YES
+        else:
+            console.statement(f"{answer} is not a proper answer, please try again")
