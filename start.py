@@ -54,15 +54,22 @@ def login():
 print("### Welcome ###")
 print(" 1. Login")
 
-option = 0
-option_is_invalid = True
-while option_is_invalid:
-    try:
-        option = input("Please input your option: ")
-        option = int(option)
-        option_is_invalid = False
-    except:
-        print(f'{option} is not an appropriate option')
+
+def input_user_option():
+    option = 0
+    option_is_invalid = True
+
+    while option_is_invalid:
+        try:
+            option = input("Please input your option: ")
+            option = int(option)
+            option_is_invalid = False
+            return option
+        except:
+            print(f'{option} is not an appropriate option')
+
+
+option = input_user_option()
 
 if option == 1:
     login()
