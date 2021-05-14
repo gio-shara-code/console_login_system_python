@@ -11,7 +11,7 @@ def get_user_by_email(email_address: str):
     return -1
 
 def login():
-    print_headline("login")
+    Print.print_headline("login")
     is_user_not_logged_in = True
     while is_user_not_logged_in:
 
@@ -65,7 +65,6 @@ def input_option():
 
 
 class Print:
-
     @staticmethod
     def print_options(age):
         print(" 1. Login")
