@@ -12,7 +12,7 @@ def headline(text: str):
 def red_bold(text: str):
     return colored(f'{text}', 'red', attrs=['bold'])
 
-def bold(text: str):
+def bold_white(text: str):
     return colored(f'{text}', 'white', attrs=['bold'])
 
 def yellow_bold(text: str):

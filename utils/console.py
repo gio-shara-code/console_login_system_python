@@ -8,4 +8,10 @@ def headline(text: str):
     print(theme.headline(f'\n### {text.upper()} ###\n'))
 
 def warning(text: str):
-    print(f'{theme.red_bold("Warning: ")}{theme.bold(f"{text}")}\n')
+    print(f'{theme.red_bold("Warning: ")}{theme.bold_white(f"{text}")}\n')
+
+def question(text: str):
+    print(f'{theme.yellow_bold(f"{text}")}{theme.bold_white(f"{text}")}\n')
+
+def statement(text: str):
+    print(f'{theme.bold_white(f"{text}")}\n')

@@ -10,40 +10,40 @@
     },
     {
       "userId": 2,
-      "firstName": "racks",
-      "lastName": "jacson",
+      "firstName": "Racks",
+      "lastName": "Jacson",
       "phoneNumber": "123456",
       "emailAddress": "racks.jacson@learningcontainer.com",
       "password": "123456"
     },
     {
       "userId": 3,
-      "firstName": "denial",
-      "lastName": "roast",
+      "firstName": "Denial",
+      "lastName": "Roast",
       "phoneNumber": "33333333",
       "emailAddress": "denial.roast@learningcontainer.com",
       "password": "123456"
     },
     {
       "userId": 4,
-      "firstName": "devid",
-      "lastName": "neo",
+      "firstName": "Devid",
+      "lastName": "Neo",
       "phoneNumber": "222222222",
       "emailAddress": "devid.neo@learningcontainer.com",
       "password": "123456"
     },
     {
       "userId": 5,
-      "firstName": "jone",
-      "lastName": "mac",
+      "firstName": "Jone",
+      "lastName": "Mac",
       "phoneNumber": "111111111",
       "emailAddress": "jone.mac@learningcontainer.com",
       "password": "123456"
     },
     {
       "userId": 6,
-      "firstName": "denial",
-      "lastName": "roast",
+      "firstName": "Denial",
+      "lastName": "Roast",
       "phoneNumber": "33333333",
       "emailAddress": "denial.roast@learningcontainer.com",
       "password": "123456"
