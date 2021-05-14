@@ -4,17 +4,14 @@ from services import user_services
 from utils import terminal_read
 
 def login():
-    is_user_not_logged_in = True
-    while is_user_not_logged_in:
+    while True:
         email = terminal_read.email()
         user = user_services.get_user_by_email(email)
         if(user == -1):
-            console.statement(f'{email} does not exists.')
-
+            console.statement(f'{email} does not exists. Please try again.')
         else:
             console.statement(f'Welcome {user["firstName"]} {user["lastName"]}!')
-            is_user_not_logged_in = True
-            break
+            return
 
         willing_not_continue = True
         while willing_not_continue:

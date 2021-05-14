@@ -8,3 +8,5 @@ def get_user_by_email(email_address: str):
         if(user["emailAddress"] == email_address):
             return user
     return -1
+
+

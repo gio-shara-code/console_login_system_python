@@ -12,6 +12,7 @@ if option == 1:
     console.headline("login")
     auth_services.login()
 elif option == 2:
+    console.headline("register")
     auth_services.register()
 else:
     console.warning(f'Option doesn\'t exist')
