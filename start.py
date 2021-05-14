@@ -47,12 +47,9 @@ def login():
 
 
 def print_headline(headline: str):
-    print("")
-    print(f"### {headline.upper()} ###")
-    print("")
+    print(f"\n### {headline.upper()} ###")
 
 def input_option():
-    option = 0
     option_is_invalid = True
     while option_is_invalid:
         try:
@@ -65,7 +62,7 @@ def input_option():
 
 
 print_headline("welcome")
-print(" 1. Login")
+print(" 1. Login\n")
 
 option = input_option()
 
