@@ -1,5 +1,6 @@
 import json
 import re
+from utils.print import Print
 
 f = open("users.json")
 users = json.load(f)["users"]
@@ -11,7 +12,7 @@ def get_user_by_email(email_address: str):
     return -1
 
 def login():
-    Print.print_headline("login")
+    Print.headline("login")
     is_user_not_logged_in = True
     while is_user_not_logged_in:
 
@@ -47,11 +48,6 @@ def login():
 
 
 
-
-    
-
-
-
 def input_option():
     option_is_invalid = True
     while option_is_invalid:
@@ -64,19 +60,10 @@ def input_option():
 
 
 
-class Print:
-    @staticmethod
-    def print_options(age):
-        print(" 1. Login")
-        print(" 2. Register\n")
-
-    @staticmethod
-    def print_headline(headline: str):
-        print(f"\n### {headline.upper()} ###")
 
 
-Print.print_headline("welcome")
-Print.print_options()
+Print.headline("welcome")
+Print.options()
 
 option = input_option()
 
