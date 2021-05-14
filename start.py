@@ -1,16 +1,9 @@
-import json
 import re
 from utils.print import Print
 from utils.input import Input
+from services import user_services
 
-f = open("users.json")
-users = json.load(f)["users"]
 
-def get_user_by_email(email_address: str):
-    for user in users:
-        if(user["emailAddress"] == email_address):
-            return user
-    return -1
 
 def login():
     Print.headline("login")
@@ -27,7 +20,7 @@ def login():
             else:
                 print(f'Format incorrect for: {email}')
 
-        user = get_user_by_email(email)
+        user = user_services.get_user_by_email(email)
         if(user == -1):
             print(f'{email} does not exists.')
         else:
@@ -51,11 +44,6 @@ def login():
 
     
 
-
-
-
-
-
 Print.headline("welcome")
 Print.options()
 
@@ -63,6 +51,8 @@ option = Input.option()
 
 if option == 1:
     login()
+elif option == 2:
+    print("Register")
 elif option == -1:
     print(f"Option not valid")
 else:
