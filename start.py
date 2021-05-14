@@ -1,22 +1,22 @@
 from utils import console
 from utils import terminal_read
 from services import auth_services
+from utils import console
+from utils import theme
 
 
 console.headline("welcome")
 console.options()
 
-option = terminal_read.option()
+option = input(theme.input("Option: "))
 
 if option == 1:
     auth_services.login()
 elif option == 2:
     print("Register")
-elif option == -1:
-    print(f"Option not valid")
 else:
-    print(f'The option {option} doesn\'t exist')
-
+    console.warning(f'Option doesn\'t exist')
+    
     
 # existing email => krish.lee@learningcontainer.com
 # non-existing email => non.existing@email.com

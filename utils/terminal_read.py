@@ -2,15 +2,15 @@ from utils import validate
 from utils import theme
 from utils import console
 
-def option():    
-        option_is_invalid = True
-        while option_is_invalid:
-            try:
-                option = int(input(theme.input("Option: ")))
-                option_is_invalid = False
-                return option
-            except:
-                return -1
+# def option():    
+#         option_is_invalid = True
+#         while option_is_invalid:
+#             try:
+#                 option = int()
+#                 option_is_invalid = False
+#                 return option
+#             except:
+#                 return -1
     
 def email():
     is_email_not_valid = True
@@ -21,3 +21,4 @@ def email():
             console.warning("Incorrect email format.")
         else:
             return email
+

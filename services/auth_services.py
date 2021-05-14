@@ -7,8 +7,9 @@ def login():
     is_user_not_logged_in = True
     while is_user_not_logged_in:
         email = terminal_read.email()
-        user = user_services.get_user_by_email(email)
         
+        user = user_services.get_user_by_email(email)
+
         if(user == -1):
             print(f'{email} does not exists.')
         else:
