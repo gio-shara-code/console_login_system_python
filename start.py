@@ -1,6 +1,7 @@
 import json
 import re
 from utils.print import Print
+from utils.input import Input
 
 f = open("users.json")
 users = json.load(f)["users"]
@@ -52,17 +53,7 @@ def login():
 
 
 
-class Input:
-    @staticmethod
-    def option():
-        option_is_invalid = True
-        while option_is_invalid:
-            try:
-                option = int(input("Please input your option: "))
-                option_is_invalid = False
-                return option
-            except:
-                print(f'{option} is not an appropriate option')
+
 
 
 Print.headline("welcome")
@@ -72,11 +63,12 @@ option = Input.option()
 
 if option == 1:
     login()
+elif option == -1:
+    print(f"Option not valid")
 else:
     print(f'The option {option} doesn\'t exist')
 
     
-
 # existing email => krish.lee@learningcontainer.com
 # non-existing email => non.existing@email.com
 
