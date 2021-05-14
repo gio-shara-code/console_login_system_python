@@ -1,5 +1,9 @@
 import json
+from os import confstr
 from enums.email import Email
+from enums.option import Option
+
+
 
 f = open("users.json")
 users = json.load(f)["users"]
