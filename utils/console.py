@@ -1,8 +1,8 @@
-from termcolor import colored, cprint
+from utils import theme
 
 def options():
-    print(colored('1. Login', 'magenta', attrs=['bold']))
-    print(colored('2. Register/n', 'magenta', attrs=['bold']))
+    print(theme.option("1. Login"))
+    print(theme.option("2. Register"))
 
 def headline(headline: str):
-    print(colored(f'\n### {headline.upper()}! ###', 'blue', attrs=['bold']))
+    print(theme.headline(f'\n### {headline.upper()} ###\n'))
