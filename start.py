@@ -46,8 +46,11 @@ def login():
                 print(f'{answer} is not a proper answer')
 
 
-def print_headline(headline: str):
-    print(f"\n### {headline.upper()} ###")
+
+
+    
+
+
 
 def input_option():
     option_is_invalid = True
@@ -60,8 +63,21 @@ def input_option():
             print(f'{option} is not an appropriate option')
 
 
-print_headline("welcome")
-print(" 1. Login\n")
+
+class Print:
+
+    @staticmethod
+    def print_options(age):
+        print(" 1. Login")
+        print(" 2. Register\n")
+
+    @staticmethod
+    def print_headline(headline: str):
+        print(f"\n### {headline.upper()} ###")
+
+
+Print.print_headline("welcome")
+Print.print_options()
 
 option = input_option()
 
@@ -70,7 +86,7 @@ if option == 1:
 else:
     print(f'The option {option} doesn\'t exist')
 
-
+    
 
 # existing email => krish.lee@learningcontainer.com
 # non-existing email => non.existing@email.com
