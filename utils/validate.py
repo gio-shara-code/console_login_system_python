@@ -1,5 +1,13 @@
 import re
 from enums.input import Input
+from enums.option import Option
+
+def option(opt):
+    if opt <1 or opt > len(Option):
+        return Input.NOT_CORRECT_FORMAT
+    return Input.CORRECT_FORMAT
+         
+
 def email(email: str):
     if re.search('^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$', email):
         return Input.CORRECT_FORMAT
