@@ -22,6 +22,14 @@ def login():
         
 
 def register():
+    # Read email
+    email = terminal_read.email()
+
+    # Read name
+    name = terminal_read.name()
+
+    # Read password
+    pwd = terminal_read.password()
     pass
     
 
