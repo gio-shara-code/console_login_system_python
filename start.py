@@ -48,24 +48,27 @@ def login():
 
 
 
-def input_option():
-    option_is_invalid = True
-    while option_is_invalid:
-        try:
-            option = int(input("Please input your option: "))
-            option_is_invalid = False
-            return option
-        except:
-            print(f'{option} is not an appropriate option')
+    
 
 
 
+class Input:
+    @staticmethod
+    def option():
+        option_is_invalid = True
+        while option_is_invalid:
+            try:
+                option = int(input("Please input your option: "))
+                option_is_invalid = False
+                return option
+            except:
+                print(f'{option} is not an appropriate option')
 
 
 Print.headline("welcome")
 Print.options()
 
-option = input_option()
+option = Input.option()
 
 if option == 1:
     login()
