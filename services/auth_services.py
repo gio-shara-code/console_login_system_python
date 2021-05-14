@@ -26,7 +26,6 @@ def login():
             else:
                 print(f'{answer} is not a proper answer')
 
-
 def register():
     pass
 

@@ -1,5 +1,5 @@
-import re
-def option():
+from utils import validate
+def option():    
         option_is_invalid = True
         while option_is_invalid:
             try:
@@ -13,9 +13,8 @@ def email():
     is_email_not_valid = True
     while is_email_not_valid:
         email = input("Please input your email: ")
-        email_regex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
-        if re.search(email_regex, email):
-            is_email_not_valid = False
+        isValid = validate.email(email)
+        if isValid:
             return email
         else:
             print(f'Format incorrect for: {email}')
