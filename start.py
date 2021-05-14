@@ -1,12 +1,12 @@
-from utils.print import Print
-from utils.input import Input
+from utils import console
+from utils import terminal_read
 from services import auth_services
 
 
-Print.headline("welcome")
-Print.options()
+console.headline("welcome")
+console.options()
 
-option = Input.option()
+option = terminal_read.option()
 
 if option == 1:
     auth_services.login()
