@@ -11,11 +11,7 @@ def get_user_by_email(email_address: str):
     return -1
 
 def login():
-    print("")
-    print("### Login ###")
-    print("")
-
-    
+    print_headline("login")
     is_user_not_logged_in = True
     while is_user_not_logged_in:
 
@@ -50,9 +46,10 @@ def login():
                 print(f'{answer} is not a proper answer')
 
 
-
-
-
+def print_headline(headline: str):
+    print("")
+    print(f"### {headline.upper()} ###")
+    print("")
 
 def input_option():
     option = 0
@@ -67,7 +64,7 @@ def input_option():
             print(f'{option} is not an appropriate option')
 
 
-print("### Welcome ###")
+print_headline("welcome")
 print(" 1. Login")
 
 option = input_option()
