@@ -1,5 +1,4 @@
 from utils import console
-from utils import terminal_read
 from services import auth_services
 from utils import console
 from utils import theme

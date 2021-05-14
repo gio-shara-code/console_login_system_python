@@ -17,4 +17,3 @@ def bold(text: str):
 
 def yellow_bold(text: str):
     return colored(f'{text}', 'yellow', attrs=['bold'])
-
