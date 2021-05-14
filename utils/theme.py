@@ -15,5 +15,6 @@ def red_bold(text: str):
 def bold(text: str):
     return colored(f'{text}', 'white', attrs=['bold'])
 
-# def demand(text: str):
-#     return colored(f'{text}', 'red', attrs=['blink'])
+def yellow_bold(text: str):
+    return colored(f'{text}', 'yellow', attrs=['bold'])
+
