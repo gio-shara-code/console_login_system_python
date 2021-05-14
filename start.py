@@ -15,10 +15,9 @@ elif option == Option.REGISTER.value:
     console.headline("register")
     auth_services.register()
 elif option == Option.FORGOT_PASSWORD.value:
-    pass
+    console.headline("forgot password")
 else:
     console.warning(f'Option doesn\'t exist')
-    
+
 # existing email => krish.lee@learningcontainer.com
 # non-existing email => non.existing@email.com
-

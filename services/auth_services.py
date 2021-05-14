@@ -5,6 +5,7 @@ from services import user_services
 from utils import terminal_read
 from enums.email import Email
 
+
 def login():
     while True:
         email = terminal_read.email()
@@ -12,14 +13,14 @@ def login():
         if(user == Email.DOES_NOT_EXIST):
             console.statement(f'{email} does not exists. Please try again.')
         else:
-            console.statement(f'Welcome {user["firstName"]} {user["lastName"]}!')
+            console.statement(
+                f'Welcome {user["firstName"]} {user["lastName"]}!')
             return
-        
+
         answer = terminal_read.yes_no()
         if answer == Answer.NO:
             return
-        
-        
+
 
 def register():
     # Read email
@@ -31,6 +32,3 @@ def register():
     # Read password
     pwd = terminal_read.password()
     pass
-    
-
-
