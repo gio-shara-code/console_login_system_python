@@ -9,6 +9,7 @@ console.options()
 option = terminal_read.option()
 
 if option == 1:
+    console.headline("login")
     auth_services.login()
 elif option == 2:
     auth_services.register()

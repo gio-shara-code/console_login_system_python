@@ -4,8 +4,6 @@ from services import user_services
 from utils import terminal_read
 
 def login():
-    console.headline("login")
-    
     is_user_not_logged_in = True
     while is_user_not_logged_in:
         email = terminal_read.email()
