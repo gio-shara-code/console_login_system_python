@@ -7,7 +7,7 @@ from utils import theme
 console.headline("welcome")
 console.options()
 
-option = input(theme.input("Option: "))
+option = int(input(theme.input("Option: ")))
 
 if option == 1:
     auth_services.login()
