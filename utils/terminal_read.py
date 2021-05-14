@@ -2,6 +2,7 @@ from utils import validate
 from utils import theme
 from utils import console
 from enums.answer import Answer
+from enums.email import Email
 
 def option():    
     while True:
@@ -17,9 +18,8 @@ def option():
 def email():
     while True:
         email = input(theme.input("Email: "))
-        isValid = validate.email(email)
-        if isValid == -1:
-            console.warning("Incorrect email format.")
+        if validate.email(email) == Email.NOT_CORRECT_FORMAT:
+            console.warning("Incorrect email format, please try again.")
         else:
             return email
 
