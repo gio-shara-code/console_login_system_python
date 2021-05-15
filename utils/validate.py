@@ -28,6 +28,6 @@ def password(pwd: str):
 
 
 def phone_number(phone_number: str):
-    if re.fullmatch('^\d{12}$', phone_number):
+    if re.fullmatch('^\+\d{13}$', phone_number):
         return Answer.CORRECT
     return Answer.NOT_CORRECT

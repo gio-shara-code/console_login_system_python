@@ -36,7 +36,7 @@ def name():
 
 def phone_number():
     while True:
-        phone_number = input(theme.input("Phone Number (e.g. 015770464441): "))
+        phone_number = input(theme.input("Phone Number: (e.g. +4915574461441): "))
         if validate.phone_number(phone_number) == Answer.NOT_CORRECT:
             console.warning(
                 "Phone number should only contain 12 digits")

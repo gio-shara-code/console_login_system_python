@@ -1,6 +1,6 @@
 import json
 from os import confstr
-from enums.email import Email
+from enums.instance import Instance
 from enums.option import Option
 from models.user import User
 
@@ -10,11 +10,10 @@ users = json.load(f)
 
 
 def get_user_by_email(email: str) -> User:
-    # substitute algorithm (user or filter find method)
     for user in users:
         if(user["email"] == email):
             return User.from_json(user)
-    return Email.DOES_NOT_EXIST
+    return Instance.DOES_NOT_EXIST
 
 
 def add_user_to_json(user: User):
@@ -23,3 +22,10 @@ def add_user_to_json(user: User):
         data.append(user.to_json())
         file.seek(0)
         json.dump(data, file, indent=4)
+
+
+def get_user_by_phone_number(phone_number: str) -> User:
+    for user in users:
+        if(user["phone_number"] == phone_number):
+            return User.from_json(user)
+    return Instance.DOES_NOT_EXIST

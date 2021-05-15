@@ -23,3 +23,7 @@ def bold_white(text: str):
 
 def yellow_bold(text: str):
     return colored(f'{text}', 'yellow', attrs=['bold'])
+
+
+def green_bold(text: str):
+    return colored(f'{text}', 'green', attrs=['bold'])
