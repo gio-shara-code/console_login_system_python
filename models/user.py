@@ -36,6 +36,9 @@ class User:
 
     def welcome_message(self):
         return f'Welcome! Your have been successfully authenticated {self.__name}!'
+
+    def sent_sms_message(self):
+        return f'{self.__name}, we sent you your password via sms.\nGood Luck and don\'t forget it next time!'
     # def set_name(self, n):
     #     self.__name = n
 
