@@ -10,7 +10,7 @@ def option(opt):
 
 
 def email(email: str):
-    if re.search('^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$', email):
+    if re.search('^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$', email.strip()):
         return Answer.CORRECT
     return Answer.NOT_CORRECT
 

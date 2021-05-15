@@ -9,19 +9,23 @@ from models.user import User
 def login():
     while True:
         email = terminal_read.email()
-        password = terminal_read.password()
-
         user = user_services.get_user_by_email(email)
         if(user == Email.DOES_NOT_EXIST):
             console.statement(
-                f'{user.get_email()} does not exists. Please try again.')
+                f'{email} does not exists. Please try again.')
         else:
             # Check whether password is correct
-            # If wrong, yes or no?
-
-            console.statement(
-                f'Your are authenticated {user.get_name()}!')
-            return
+            while True:
+                password = terminal_read.password()
+                if password == user.get_password():
+                    return console.statement(
+                        f'Your are authenticated {user.get_name()}!')
+                else:
+                    console.statement(
+                        f'Wrong password!')
+                    answer = terminal_read.yes_no()
+                    if answer == Answer.NO:
+                        return
 
         answer = terminal_read.yes_no()
         if answer == Answer.NO:

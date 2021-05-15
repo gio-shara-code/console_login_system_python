@@ -61,6 +61,7 @@ def yes_no():
             console.statement("See you.")
             return Answer.NO
         elif answer.lower() == "y" or answer.lower() == "yes":
+            print("")
             return Answer.YES
         else:
             console.statement(
