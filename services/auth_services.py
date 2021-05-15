@@ -6,6 +6,7 @@ from enums.instance import Instance
 from models.user import User
 from api import sms
 from enums.process import Process
+from utils import generate
 
 
 def login():
@@ -48,8 +49,9 @@ def register():
     pwd = terminal_read.password("Password (min. 4 and max. 8 characters): ")
     phone_number = terminal_read.phone_number()
 
-    # instead of 23 random number
-    user = User(23, name, email, pwd, phone_number)
+    id = generate.random_id()
+
+    user = User(id, name, email, pwd, phone_number)
     user_services.add_user_to_json(user)
 
 
@@ -71,7 +73,6 @@ def forgot_password():
 
 
 def reset_password():
-    # Email
     while True:
         email = terminal_read.email()
         user = user_services.get_user_by_email(email)

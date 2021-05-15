@@ -27,5 +27,3 @@ elif option == Option.RESET_PASSWORD.value:
 else:
     console.warning(f'Option doesn\'t exist')
 
-# existing email => krish.lee@learningcontainer.com
-# non-existing email => non.existing@email.com

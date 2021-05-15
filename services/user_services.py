@@ -38,4 +38,3 @@ def replaced_users_password(new_password: str, email: str):
 
 ### Features ###
 # 1. Generate random id's
-# 2.
