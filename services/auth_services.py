@@ -1,4 +1,3 @@
-import json
 from enums.answer import Answer
 from utils import console
 from services import user_services
@@ -7,7 +6,6 @@ from enums.instance import Instance
 from models.user import User
 from api import sms
 from enums.process import Process
-from services import file_services
 
 
 def login():
@@ -61,9 +59,11 @@ def forgot_password():
         user = user_services.get_user_by_phone_number(phone_number)
         if user == Instance.DOES_NOT_EXIST:
             console.warning(
-                f"{phone_number} does not exists. Please try again")
+                f"{phone_number} does not exists. Please try again.")
             continue
+
         process = sms.send_password(phone_number, user.get_password())
+
         if process == Process.FAILED:
             return console.warning("Your phone number doesn't exist.")
         console.successful_message(user.sent_sms_success_text())
