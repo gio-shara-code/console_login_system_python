@@ -20,8 +20,12 @@ elif option == Option.FORGOT_PASSWORD.value:
     console.headline("forgot password")
     auth_services.forgot_password()
 
+elif option == Option.RESET_PASSWORD.value:
+    console.headline("reset password")
+    auth_services.reset_password()
+
 else:
     console.warning(f'Option doesn\'t exist')
- 
+
 # existing email => krish.lee@learningcontainer.com
 # non-existing email => non.existing@email.com

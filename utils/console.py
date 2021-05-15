@@ -4,7 +4,8 @@ import theme
 def options():
     print(theme.option("1. Login"))
     print(theme.option("2. Register"))
-    print(theme.option("3. Forgot Password\n"))
+    print(theme.option("3. Forgot Password"))
+    print(theme.option("4. Reset Password\n"))
 
 
 def headline(text: str):
@@ -25,3 +26,4 @@ def statement(text: str):
 
 def successful_message(text: str):
     print(f'{theme.green_bold(f"{text}")}\n')
+

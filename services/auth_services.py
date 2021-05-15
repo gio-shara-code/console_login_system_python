@@ -64,5 +64,12 @@ def forgot_password():
         process = sms.send_password(phone_number, user.get_password())
         if process == Process.FAILED:
             return console.warning("Your phone number doesn't exist.")
-        console.successful_message(user.sent_sms_success_text)
+        console.successful_message(user.sent_sms_success_text())
         break
+
+
+def reset_password():
+    # Current password
+    # New password
+    # Modify the user in json file
+    pass
