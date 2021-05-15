@@ -56,8 +56,6 @@ def register():
 
 
 def forgot_password():
-    # read phone number
-    # and send the user a message with his password via phone.
     while True:
         phone_number = terminal_read.phone_number()
         user = user_services.get_user_by_phone_number(phone_number)
