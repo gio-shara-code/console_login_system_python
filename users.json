@@ -1,58 +1,9 @@
 [
-  {
-    "user_id": 1,
-    "name": "Lee Krish ",
-    "phone_number": "+4915770464441",
-    "email": "krish.lee@learningcontainer.com",
-    "password": "abcd"
-  },
-  {
-    "user_id": 2,
-    "name": "Jacson Racks",
-    "phone_number": "015770464431",
-    "email": "racks.jacson@learningcontainer.com",
-    "password": "abcd"
-  },
-  {
-    "user_id": 3,
-    "name": "Roast Denial",
-    "phone_number": "015770464431",
-    "email": "denial.roast@learningcontainer.com",
-    "password": "abcd"
-  },
-  {
-    "user_id": 4,
-    "name": "Neo Devid",
-    "phone_number": "015770464431",
-    "email": "devid.neo@learningcontainer.com",
-    "password": "abcd"
-  },
-  {
-    "user_id": 5,
-    "name": "Mac Jone",
-    "phone_number": "015770464431",
-    "email": "jone.mac@learningcontainer.com",
-    "password": "abcd"
-  },
-  {
-    "user_id": 6,
-    "name": "Roast Denial",
-    "phone_number": "015770464431",
-    "email": "denial.roast@learningcontainer.com",
-    "password": "abcd"
-  },
-  {
-    "user_id": 7,
-    "name": "Giorgi Sharashenidze",
-    "email": "giorgi@email.com",
-    "password": "werew",
-    "phone_number": "015770464431"
-  },
-  {
-    "user_id": 23,
-    "name": "Giorgi",
-    "phone_number": "123123123123",
-    "email": "krish.lee@learningcontainer.co",
-    "password": "Giorgi"
-  }
+    {
+        "user_id": 23,
+        "name": "Giorgi Sharashenidze",
+        "phone_number": "+4915770464441",
+        "email": "giorgi@gmail.com",
+        "password": "giorgi"
+    }
 ]

@@ -1,13 +1,10 @@
 import json
 from os import confstr
 from enums.instance import Instance
-from enums.option import Option
 from models.user import User
-
 
 f = open("users.json")
 users = json.load(f)
-
 
 def get_user_by_email(email: str) -> User:
     for user in users:
@@ -29,3 +26,4 @@ def get_user_by_phone_number(phone_number: str) -> User:
         if(user["phone_number"] == phone_number):
             return User.from_json(user)
     return Instance.DOES_NOT_EXIST
+

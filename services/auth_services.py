@@ -15,23 +15,26 @@ def login():
         if(user == Instance.DOES_NOT_EXIST):
             console.statement(
                 f'{email} does not exists. Please try again.')
-        else:
-            # Check whether password is correct
-            while True:
-                password = terminal_read.password()
-                if password == user.get_password():
-                    return console.successful_message(
-                        f'Your are authenticated {user.get_name()}!')
-                else:
-                    console.statement(
-                        f'Wrong password!')
-                    answer = terminal_read.yes_no()
-                    if answer == Answer.NO:
-                        return
 
-        answer = terminal_read.yes_no()
-        if answer == Answer.NO:
-            return
+            answer = terminal_read.yes_no()
+            if answer == Answer.NO:
+                return
+                
+            continue
+
+        while True:
+            password = terminal_read.password()
+            if password == user.get_password():
+                return console.successful_message(
+                    f'Your are authenticated {user.get_name()}!')
+            else:
+                console.statement(
+                    f'Wrong password!')
+                answer = terminal_read.yes_no()
+                if answer == Answer.NO:
+                    return
+
+        
 
 
 def register():
@@ -40,10 +43,9 @@ def register():
     while True:
         email = terminal_read.email()
         user = user_services.get_user_by_email(email)
-
         if user != Instance.DOES_NOT_EXIST:
             console.warning(
-                f'{email} does already exists. Please try again.')
+                f'{email} does already exist. Please try again.')
             continue
         break
 

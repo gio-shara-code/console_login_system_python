@@ -1,4 +1,4 @@
-from utils import theme
+import theme
 
 
 def options():
@@ -21,6 +21,7 @@ def question(text: str):
 
 def statement(text: str):
     print(f'{theme.bold_white(f"{text}")}\n')
+
 
 def successful_message(text: str):
     print(f'{theme.green_bold(f"{text}")}\n')
