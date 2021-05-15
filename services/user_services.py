@@ -10,7 +10,8 @@ users = json.load(f)
 
 
 def get_user_by_email(email: str) -> User:
-    #substitute algorithm (user or filter find method)
+    # substitute algorithm (user or filter find method)
+    users.find()
     for user in users:
         if(user["email"] == email):
             return User.from_json(user)
