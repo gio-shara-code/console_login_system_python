@@ -16,6 +16,7 @@ elif option == Option.REGISTER.value:
     auth_services.register()
 elif option == Option.FORGOT_PASSWORD.value:
     console.headline("forgot password")
+    auth_services.forgot_password()
 else:
     console.warning(f'Option doesn\'t exist')
 
