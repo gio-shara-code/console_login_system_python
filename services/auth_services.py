@@ -49,9 +49,7 @@ def register():
     pwd = terminal_read.password("Password (min. 4 and max. 8 characters): ")
     phone_number = terminal_read.phone_number()
 
-    id = generate.random_id()
-
-    user = User(id, name, email, pwd, phone_number)
+    user = User(generate.random_id(), name, email, pwd, phone_number)
     user_services.add_user_to_json(user)
 
 
