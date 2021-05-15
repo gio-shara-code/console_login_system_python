@@ -62,8 +62,7 @@ def try_again():
             console.statement("See you.")
             return Answer.NO
         elif answer.lower() == "y" or answer.lower() == "yes":
-            print("")
             return Answer.YES
         else:
             console.statement(
-                f"{answer} is not a proper answer, please try again")
+                f"{answer} is not a proper answer.")

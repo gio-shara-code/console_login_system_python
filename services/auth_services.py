@@ -14,7 +14,7 @@ def login():
         user = user_services.get_user_by_email(email)
         if(user == Instance.DOES_NOT_EXIST):
             console.statement(
-                f'{email} does not exists. Please try again.')
+                f'{email} does not exists.')
             answer = terminal_read.try_again()
             if answer == Answer.NO:
                 return
@@ -79,10 +79,16 @@ def reset_password():
             continue
         break
 
-    current_password = terminal_read.password("Current Password: ")
-
-    # Current password
-    current_password = terminal_read.password("Current Password: ")
+    while True:
+        current_password = terminal_read.password("Current Password: ")
+        if current_password != user.get_password():
+            console.statement(
+                f'Wrong password!')
+            answer = terminal_read.try_again()
+            if answer == Answer.NO:
+                return
+            continue
+        break
 
     # New password
     new_password = terminal_read.password("New Password: ")
