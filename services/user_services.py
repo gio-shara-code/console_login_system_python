@@ -2,12 +2,11 @@ import json
 from os import confstr
 from enums.instance import Instance
 from models.user import User
-
-f = open("users.json")
-users = json.load(f)
+from services import file_services
 
 
 def get_user_by_email(email: str) -> User:
+    users = file_services.get_all_users()
     for user in users:
         if(user["email"] == email):
             return User.from_json(user)
@@ -15,14 +14,14 @@ def get_user_by_email(email: str) -> User:
 
 
 def add_user_to_json(user: User):
-    with open("users.json", "r+") as file:
-        data = json.load(file)
-        data.append(user.to_json())
-        file.seek(0)
-        json.dump(data, file, indent=4)
+    users = file_services.get_all_users()
+    users.append(user.to_json())
+    new_users = json.dumps(users)
+    file_services.write_users(new_users)
 
 
 def get_user_by_phone_number(phone_number: str) -> User:
+    users = file_services.get_all_users()
     for user in users:
         if(user["phone_number"] == phone_number):
             return User.from_json(user)
