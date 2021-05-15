@@ -92,4 +92,8 @@ def reset_password():
 
     # New password
     new_password = terminal_read.password("New Password: ")
+
+    # find the user and replace the password property for the user.
+
+
     # Modify the user in json file
