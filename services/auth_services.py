@@ -24,7 +24,7 @@ def login():
     while True:
         password = terminal_read.password()
         if password == user.get_password():
-            return console.successful_message(user.welcome_message())
+            return console.successful_message(user.welcome_text())
         else:
             console.statement(
                 f'Wrong password!')
@@ -64,5 +64,5 @@ def forgot_password():
         process = sms.send_password(phone_number, user.get_password())
         if process == Process.FAILED:
             return console.warning("Your phone number doesn't exist.")
-        console.successful_message(user.sent_sms_message)
+        console.successful_message(user.sent_sms_success_text)
         break
