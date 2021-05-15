@@ -1,9 +1,9 @@
 [
-    {
-        "user_id": 23,
-        "name": "Giorgi Sharashenidze",
-        "phone_number": "+4915770464441",
-        "email": "giorgi@gmail.com",
-        "password": "giorgi"
-    }
+  {
+    "user_id": 23,
+    "name": "Giorgi Sharashenidze",
+    "phone_number": "+4915770464441",
+    "email": "giorgi@gmail.com",
+    "password": "giorgi"
+  }
 ]

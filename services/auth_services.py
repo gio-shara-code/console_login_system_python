@@ -1,3 +1,4 @@
+import json
 from enums.answer import Answer
 from utils import console
 from services import user_services
@@ -90,10 +91,17 @@ def reset_password():
             continue
         break
 
-    # New password
     new_password = terminal_read.password("New Password: ")
 
-    # find the user and replace the password property for the user.
+    f = open("users.json")
+    users = json.load(f)
+    f.close()
 
+    for user in users:
+        if user["email"] == email:
+            user["password"] = new_password
 
-    # Modify the user in json file
+    new_users = json.dumps(users)
+
+    with open("users.json", "w") as file:
+        file.write(new_users)
