@@ -15,20 +15,20 @@ def login():
         if(user == Instance.DOES_NOT_EXIST):
             console.statement(
                 f'{email} does not exists. Please try again.')
-            answer = terminal_read.yes_no()
+            answer = terminal_read.try_again()
             if answer == Answer.NO:
                 return
             continue
         break
 
     while True:
-        password = terminal_read.password()
+        password = terminal_read.password("Password: ")
         if password == user.get_password():
             return console.successful_message(user.welcome_text())
         else:
             console.statement(
                 f'Wrong password!')
-            answer = terminal_read.yes_no()
+            answer = terminal_read.try_again()
             if answer == Answer.NO:
                 return
 
@@ -45,7 +45,7 @@ def register():
             continue
         break
 
-    pwd = terminal_read.password()
+    pwd = terminal_read.password("Password (min. 4 and max. 8 characters): ")
     phone_number = terminal_read.phone_number()
 
     # instead of 23 random number
@@ -69,7 +69,21 @@ def forgot_password():
 
 
 def reset_password():
+    # Email
+    while True:
+        email = terminal_read.email()
+        user = user_services.get_user_by_email(email)
+        if(user == Instance.DOES_NOT_EXIST):
+            console.statement(
+                f'{email} does not exists. Please try again.')
+            continue
+        break
+
+    current_password = terminal_read.password("Current Password: ")
+
     # Current password
+    current_password = terminal_read.password("Current Password: ")
+
     # New password
+    new_password = terminal_read.password("New Password: ")
     # Modify the user in json file
-    pass

@@ -45,9 +45,9 @@ def phone_number():
             return phone_number
 
 
-def password():
+def password(input_text: str):
     while True:
-        pwd = input(theme.input("Password (min. 4 and max. 8 characters): "))
+        pwd = input(theme.input(input_text))
         if validate.password(pwd) == Answer.NOT_CORRECT:
             console.warning(
                 "Passwords length should be min. 4 and max. 8 and characters only")
@@ -55,7 +55,7 @@ def password():
             return pwd
 
 
-def yes_no():
+def try_again():
     while True:
         answer = input(theme.yellow_bold("Do you want to try again? (y/n): "))
         if answer.lower() == "n" or answer.lower() == "no":
