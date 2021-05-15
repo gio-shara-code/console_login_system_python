@@ -8,12 +8,18 @@ from enums.email import Email
 def login():
     while True:
         email = terminal_read.email()
+        password = terminal_read.password()
+
         user = user_services.get_user_by_email(email)
         if(user == Email.DOES_NOT_EXIST):
-            console.statement(f'{email} does not exists. Please try again.')
-        else:
             console.statement(
-                f'Welcome {user["first_name"]} {user["last_name"]}!')
+                f'{user.get_email()} does not exists. Please try again.')
+        else:
+            # Check whether password is correct
+            # If wrong, yes or no?
+
+            console.statement(
+                f'Your are authenticated {user.get_name()}!')
             return
 
         answer = terminal_read.yes_no()
@@ -32,18 +38,5 @@ def register():
 
 def forgot_password():
     phone_number = terminal_read.phone_number()
-
-    pwd = terminal_read.password()
-
-    # Read email
-    email = terminal_read.email()
-
-    # Read name
-    name = terminal_read.name()
-
-    # Read phone number
-
-    # Read password
-    pass
 
 # 015770464441
