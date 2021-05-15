@@ -9,7 +9,6 @@ from enums.process import Process
 
 
 def login():
-    email = ""
     while True:
         email = terminal_read.email()
         user = user_services.get_user_by_email(email)
@@ -25,8 +24,7 @@ def login():
     while True:
         password = terminal_read.password()
         if password == user.get_password():
-            return console.successful_message(
-                f'Your are authenticated {user.get_name()}!')
+            return console.successful_message(user.welcome_message())
         else:
             console.statement(
                 f'Wrong password!')

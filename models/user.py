@@ -34,6 +34,8 @@ class User:
             "password": self.__pwd
         }
 
+    def welcome_message(self):
+        return f'Welcome! Your have been successfully authenticated {self.__name}!'
     # def set_name(self, n):
     #     self.__name = n
 
