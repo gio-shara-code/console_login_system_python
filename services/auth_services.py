@@ -93,13 +93,5 @@ def reset_password():
         break
 
     new_password = terminal_read.password("New Password: ")
-
-    users = file_services.get_all_users()
-
-    for user in users:
-        if user["email"] == email:
-            user["password"] = new_password
-
-    new_users = json.dumps(users)
-    file_services.write_users(new_users)
-    
+    user_services.replaced_users_password(new_password, email)
+    console.successful_message("Successfully changed password.")

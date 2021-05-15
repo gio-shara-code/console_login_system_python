@@ -28,6 +28,14 @@ def get_user_by_phone_number(phone_number: str) -> User:
     return Instance.DOES_NOT_EXIST
 
 
+def replaced_users_password(new_password: str, email: str):
+    users = file_services.get_all_users()
+    for user in users:
+        if user["email"] == email:
+            user["password"] = new_password
+    new_users = json.dumps(users)
+    file_services.write_users(new_users)
+
 ### Features ###
 # 1. Generate random id's
-# 2. 
+# 2.
