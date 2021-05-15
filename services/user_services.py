@@ -26,3 +26,8 @@ def get_user_by_phone_number(phone_number: str) -> User:
         if(user["phone_number"] == phone_number):
             return User.from_json(user)
     return Instance.DOES_NOT_EXIST
+
+
+### Features ###
+# 1. Generate random id's
+# 2. 

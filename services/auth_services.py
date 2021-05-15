@@ -7,6 +7,7 @@ from enums.instance import Instance
 from models.user import User
 from api import sms
 from enums.process import Process
+from services import file_services
 
 
 def login():
@@ -93,15 +94,12 @@ def reset_password():
 
     new_password = terminal_read.password("New Password: ")
 
-    f = open("users.json")
-    users = json.load(f)
-    f.close()
+    users = file_services.get_all_users()
 
     for user in users:
         if user["email"] == email:
             user["password"] = new_password
 
     new_users = json.dumps(users)
-
-    with open("users.json", "w") as file:
-        file.write(new_users)
+    file_services.write_users(new_users)
+    

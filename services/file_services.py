@@ -4,6 +4,7 @@ import json
 def get_all_users() -> list:
     f = open("users.json")
     users = json.load(f)
+    f.close()
     return users
 
 
