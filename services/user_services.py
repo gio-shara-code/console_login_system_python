@@ -10,20 +10,16 @@ users = json.load(f)
 
 
 def get_user_by_email(email: str) -> User:
+    #substitute algorithm (user or filter find method)
     for user in users:
         if(user["email"] == email):
             return User.from_json(user)
     return Email.DOES_NOT_EXIST
 
 
-def add_user_to_json(name: str, email: str, pwd: str, phone_number: str):
+def add_user_to_json(user: User):
     with open("users.json", "r+") as file:
         data = json.load(file)
-        data.append({
-            "name": name,
-            "email": email,
-            "password": pwd,
-            "phone_number": phone_number
-        })
+        data.append(user.to_json())
         file.seek(0)
         json.dump(data, file, indent=4)
