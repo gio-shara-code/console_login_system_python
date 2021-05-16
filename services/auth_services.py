@@ -51,6 +51,7 @@ def register():
 
     user = User(generate.random_id(), name, email, pwd, phone_number)
     user_services.add_user_to_json(user)
+    console.successful_message(user.successfully_registered_text())
 
 
 def forgot_password():

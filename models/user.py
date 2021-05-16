@@ -39,6 +39,10 @@ class User:
 
     def sent_sms_success_text(self):
         return f'{self.__name}, we sent you your password via sms.\nGood Luck and don\'t forget it next time!'
+
+    def successfully_registered_text(self):
+        return f'{self.__name}, you have been successfully registered.'
+
     # def set_name(self, n):
     #     self.__name = n
 
