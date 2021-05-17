@@ -1,10 +1,10 @@
 class User:
-    def __init__(self, user_id=None, name=None, email=None, pwd=None, phone_nubmer=None) -> None:
+    def __init__(self, user_id=None, name=None, email=None, pwd=None, phone_number=None) -> None:
         self.__user_id = user_id
         self.__name = name
         self.__email = email
         self.__pwd = pwd
-        self.__phone_number = phone_nubmer
+        self.__phone_number = phone_number
 
     def get_email(self):
         return self.__email
@@ -42,9 +42,3 @@ class User:
 
     def successfully_registered_text(self):
         return f'{self.__name}, you have been successfully registered.'
-
-    # def set_name(self, n):
-    #     self.__name = n
-
-    # def get_name(self, n):
-    #     self.__name = n
