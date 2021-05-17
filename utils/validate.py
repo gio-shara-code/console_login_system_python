@@ -16,7 +16,7 @@ def email(email: str):
 
 
 def name(name: str):
-    if re.fullmatch('[A-Za-z]{2,25}( [A-Za-z]{2,25})?', name):
+    if re.fullmatch('[A-Za-z]{2,25}( [A-Za-z]{2,25})?', name.strip()):
         return Answer.IN_RIGHT_FORMAT
     return Answer.IN_WRONG_FORMAT
 
@@ -28,6 +28,6 @@ def password(pwd: str):
 
 
 def phone_number(phone_number: str):
-    if re.fullmatch('^\+\d{13}$', phone_number):
+    if re.fullmatch('^\+\d{13}$', phone_number.strip()):
         return Answer.IN_RIGHT_FORMAT
     return Answer.IN_WRONG_FORMAT
