@@ -25,7 +25,7 @@ def login():
     while True:
         password = terminal_read.password("Password: ")
         if password == user.get_password():
-            return console_log.success(user.messages.WELCOME)
+            return console_log.success(user.messages.SUCCCESFULLY_LOGIN)
         else:
             console_log.statement(
                 f'Wrong password!')
@@ -94,4 +94,4 @@ def reset_password():
 
     new_password = terminal_read.password("New Password: ")
     user_services.replaced_users_password(new_password, email)
-    console_log.success("Successfully changed password.")
+    console_log.success(user.messages.SUCCESSFULLY_RESET_PASSWORD)
