@@ -25,7 +25,7 @@ def login():
     while True:
         password = terminal_read.password("Password: ")
         if password == user.get_password():
-            return console_log.success(user.welcome_text())
+            return console_log.success(user.WELCOME)
         else:
             console_log.statement(
                 f'Wrong password!')
@@ -51,7 +51,7 @@ def register():
 
     user = User(generate.random_id(), name, email, pwd, phone_number)
     user_services.add_user_to_json(user)
-    console_log.success(user.successfully_registered_text())
+    console_log.success(user.SUCCESSFULLY_REGISTERED)
 
 
 def forgot_password():
@@ -67,7 +67,7 @@ def forgot_password():
 
         if process == Process.FAILED:
             return console_log.warning("Your phone number doesn't exist.")
-        console_log.success(user.sent_sms_success_text())
+        console_log.success(user.SUCCESSFULLY_SENT_SMS)
         break
 
 
