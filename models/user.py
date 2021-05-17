@@ -1,3 +1,6 @@
+from utils.messages import Messages
+
+
 class User:
     def __init__(self, user_id, name, email, pwd, phone_number) -> None:
         self.__user_id = user_id
@@ -5,9 +8,7 @@ class User:
         self.__email = email
         self.__pwd = pwd
         self.__phone_number = phone_number
-        self.SUCCESSFULLY_REGISTERED = f'{name}, you have been successfully registered.'
-        self.SUCCESSFULLY_SENT_SMS = f'{name}, we sent you your password via sms.\nGood Luck and don\'t forget it next time!'
-        self.WELCOME = f'Welcome! Your have been successfully authenticated {name}!'
+        self.messages = Messages(name)
 
     def get_email(self):
         return self.__email
