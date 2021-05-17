@@ -63,5 +63,5 @@ def try_again():
             return Answer.NO
         elif answer.lower() == "y" or answer.lower() == "yes":
             return Answer.YES
-        console_log.statement(
-            f"{answer} is not a proper answer.")
+        console_log.warning(
+            f"{answer} is not a proper answer. Please try again.")
