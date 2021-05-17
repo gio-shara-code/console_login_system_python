@@ -1,5 +1,5 @@
 from enums.answer import Answer
-from utils import console
+from utils import console_log
 from services import user_services
 from utils import terminal_read
 from enums.instance import Instance
@@ -14,7 +14,7 @@ def login():
         email = terminal_read.email()
         user = user_services.get_user_by_email(email)
         if(user == Instance.DOES_NOT_EXIST):
-            console.statement(
+            console_log.statement(
                 f'{email} does not exists.')
             answer = terminal_read.try_again()
             if answer == Answer.NO:
@@ -25,9 +25,9 @@ def login():
     while True:
         password = terminal_read.password("Password: ")
         if password == user.get_password():
-            return console.successful_message(user.welcome_text())
+            return console_log.successful_message(user.welcome_text())
         else:
-            console.statement(
+            console_log.statement(
                 f'Wrong password!')
             answer = terminal_read.try_again()
             if answer == Answer.NO:
@@ -41,7 +41,7 @@ def register():
         email = terminal_read.email()
         user = user_services.get_user_by_email(email)
         if user != Instance.DOES_NOT_EXIST:
-            console.warning(
+            console_log.warning(
                 f'{email} does already exist. Please try again.')
             continue
         break
@@ -51,7 +51,7 @@ def register():
 
     user = User(generate.random_id(), name, email, pwd, phone_number)
     user_services.add_user_to_json(user)
-    console.successful_message(user.successfully_registered_text())
+    console_log.successful_message(user.successfully_registered_text())
 
 
 def forgot_password():
@@ -59,15 +59,15 @@ def forgot_password():
         phone_number = terminal_read.phone_number()
         user = user_services.get_user_by_phone_number(phone_number)
         if user == Instance.DOES_NOT_EXIST:
-            console.warning(
+            console_log.warning(
                 f"{phone_number} does not exists. Please try again.")
             continue
 
         process = sms.send_password(phone_number, user.get_password())
 
         if process == Process.FAILED:
-            return console.warning("Your phone number doesn't exist.")
-        console.successful_message(user.sent_sms_success_text())
+            return console_log.warning("Your phone number doesn't exist.")
+        console_log.successful_message(user.sent_sms_success_text())
         break
 
 
@@ -76,7 +76,7 @@ def reset_password():
         email = terminal_read.email()
         user = user_services.get_user_by_email(email)
         if(user == Instance.DOES_NOT_EXIST):
-            console.statement(
+            console_log.statement(
                 f'{email} does not exists. Please try again.')
             continue
         break
@@ -84,7 +84,7 @@ def reset_password():
     while True:
         current_password = terminal_read.password("Current Password: ")
         if current_password != user.get_password():
-            console.statement(
+            console_log.statement(
                 f'Wrong password!')
             answer = terminal_read.try_again()
             if answer == Answer.NO:
@@ -94,4 +94,4 @@ def reset_password():
 
     new_password = terminal_read.password("New Password: ")
     user_services.replaced_users_password(new_password, email)
-    console.successful_message("Successfully changed password.")
+    console_log.successful_message("Successfully changed password.")
