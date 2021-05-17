@@ -8,7 +8,7 @@ def option():
     while True:
         try:
             option = int(input(theme.input("Option: ")))
-            if validate.option(option) == Answer.CORRECT:
+            if validate.option(option) == Answer.IN_RIGHT_FORMAT:
                 return option
             console_log.warning("Wrong option, try again")
         except:
@@ -18,7 +18,7 @@ def option():
 def email():
     while True:
         email = input(theme.input("Email: "))
-        if validate.email(email) == Answer.NOT_CORRECT:
+        if validate.email(email) == Answer.IN_WRONG_FORMAT:
             console_log.warning("Invalid email format, please try again.")
         else:
             return email
@@ -27,7 +27,7 @@ def email():
 def name():
     while True:
         name = input(theme.input("Name (e.g. Robert Schulz): "))
-        if validate.name(name) == Answer.NOT_CORRECT:
+        if validate.name(name) == Answer.IN_WRONG_FORMAT:
             console_log.warning(
                 "Name should only contain charachters.")
         else:
@@ -38,7 +38,7 @@ def phone_number():
     while True:
         phone_number = input(theme.input(
             "Phone Number: (e.g. +4915574461441): "))
-        if validate.phone_number(phone_number) == Answer.NOT_CORRECT:
+        if validate.phone_number(phone_number) == Answer.IN_WRONG_FORMAT:
             console_log.warning(
                 "Phone number should only contain 12 digits")
         else:
@@ -48,7 +48,7 @@ def phone_number():
 def password(input_text: str):
     while True:
         pwd = input(theme.input(input_text))
-        if validate.password(pwd) == Answer.NOT_CORRECT:
+        if validate.password(pwd) == Answer.IN_WRONG_FORMAT:
             console_log.warning(
                 "Passwords length should be min. 4 and max. 8 and characters only")
         else:

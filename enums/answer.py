@@ -3,5 +3,5 @@ from enum import Enum
 class Answer(Enum):
     NO = 0
     YES = 1
-    NOT_CORRECT = 2
-    CORRECT = 3
+    IN_WRONG_FORMAT = 2
+    IN_RIGHT_FORMAT = 3
